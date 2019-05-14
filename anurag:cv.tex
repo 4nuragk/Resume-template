@@ -1,0 +1,268 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document properties and packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,11pt,final]{memoir}
+
+% misc
+\renewcommand{\familydefault}{bch}	% font
+\pagestyle{empty}					% no pagenumbering
+\setlength{\parindent}{0pt}			% no paragraph indentation
+
+
+% required packages (add your own)
+\usepackage{flowfram}										% column layout
+\usepackage[export]{adjustbox}
+\usepackage[top=1cm,left=0.cm,right=1cm,bottom=1cm]{geometry}% margins
+\usepackage{graphicx}										% figures
+\usepackage{url}
+\usepackage{hyperref}% URLs
+\usepackage[usenames,dvipsnames]{xcolor}					% color
+\usepackage{multicol}										% columns env.
+	\setlength{\multicolsep}{0pt}
+\usepackage{paralist}										% compact lists
+\usepackage{tikz}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Create column layout
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% define length commands
+\setlength{\vcolumnsep}{\baselineskip}
+\setlength{\columnsep}{\vcolumnsep}
+
+% frame setup (flowfram package)
+% left frame
+\newflowframe{0.2\textwidth}{\textheight}{0pt}{0pt}[left]
+	\newlength{\LeftMainSep}
+	\setlength{\LeftMainSep}{0.1\textwidth}
+	\addtolength{\LeftMainSep}{1\columnsep}
+ 
+% small static frame for the vertical line
+\newstaticframe{1.5pt}{\textheight}{\LeftMainSep}{0pt}
+ 
+% content of the static frame
+\begin{staticcontents}{1}
+\hfill
+\tikz{%
+	\draw[loosely dotted,color=RoyalBlue,line width=1.5pt,yshift=0]
+	(0,0) -- (0,\textheight);}%
+\hfill\mbox{}
+\end{staticcontents}
+ 
+% right frame
+\addtolength{\LeftMainSep}{3.8pt}
+\addtolength{\LeftMainSep}{1\columnsep}
+\newflowframe{0.8\textwidth}{\textheight}{\LeftMainSep}{0pt}[main01]
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% define macros (for convience)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Sep}{\vspace{1.5em}}
+\newcommand{\SmallSep}{\vspace{0.5em}}
+
+\newenvironment{AboutMe}
+	{\ignorespaces\textbf{\color{RoyalBlue} About Me}}
+	{\Sep\ignorespacesafterend}
+	
+\newcommand{\CVSection}[1]
+	{\Large\textbf{#1}\par
+	\SmallSep\normalsize\normalfont}
+
+\newcommand{\CVItem}[1]
+	{\textbf{\color{RoyalBlue} #1}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Begin document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% Left frame
+%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+
+\end{figure}
+
+\begin{flushright}\small
+
+\end{flushright}\normalsize
+\framebreak
+
+
+% Right frame
+%%%%%%%%%%%%%%%%%%%%
+\Huge\bfseries {\color{RoyalBlue} Anurag Kushawaha } \\
+\small anurag.cser@gmail.com \hspace{5mm} https://github.com/anurag-cser  \\
+Phone : +91-8011764653 \hspace{3mm} www.linkedin.com/in/anurag-cser\\
+\normalsize\normalfont
+
+% About me
+A Highly Motivated innovative thinker and a initiative taker with strong logical, analytical and entrepreneurial skills, with the ability to work individually as well as a team.
+
+% Experience
+\CVSection{Education}
+\CVItem{August 2015 - Present, Assam University, Silchar }\\
+Bachelor of Technology, Computer Science \& Engineering\\
+Department of Computer Science \& Engineering
+\SmallSep
+
+\CVItem{July 2015, Delhi Public School, Dhaligaon}\\
+CBSE - Senior Secondary School Examination, 72\%
+\SmallSep
+
+\CVItem{March 2013, Bongaigaon HS School}\\
+SEBA -Secondary School Examination, 82.6\%
+\Sep
+
+% Experience
+\CVSection{Experience}
+\CVItem{May 2018 - July 2018 ,Trilltale Technologies }\\
+Full Stack Developer,\\
+Worked on creation and development of several android applications. \\
+Creating JAVA APIs related to android
+applications. \\
+Developed of TrillTale Website.
+\SmallSep
+
+\CVItem{August 2017 - Present, FOSS Assam}\\
+Co-Founder and a Tutor,\\
+Responsible for Managing the Foss Community, schedule and manage workshops, meetups and tech talks.
+Also Conducting Workshops in Machine Learning, Python and Web Development.
+\SmallSep
+
+\CVItem{June 2017 - August 2017, Repayz}\\
+Technical Intern,\\
+Responsible for Website and APIs Development.
+\SmallSep
+
+\Sep
+
+% Certificate
+\CVSection{Certification \& Workshops}
+
+\CVItem{February 2018,  Python \& TypeScript Workshop }\\
+Organised a workshop on Python and TypeScript in Assam University.
+\SmallSep
+
+\CVItem{July 2017, 9th International Conference on REVERSIBLE COMPUTATION }\\
+Attended and presented on the 9th International Conference on Reversible Computation held in Kolkata
+\SmallSep
+
+\CVItem{March 2017, Workshop on JavaScript and Shell Scripting, PES College of Engg.}\\
+Organised a workshop on JavaScript and Shell Scripting in PES College of Engineering during the IEEE Day Event
+\SmallSep
+
+\CVItem{September 2016, Assam University, Silchar}\\
+Network Implementation & Cyber Security
+\SmallSep
+
+\CVItem{August 2016, Advance Web Developer}\\
+Certification for HTM5, CSS3, JavaScript, PhP, MySQL, AngularJS, Node.js.
+\SmallSep
+
+\CVItem{August 2013, Diploma in Computer Applications}\\
+Certification for MS DOS, MS Office, Linux, Tally, C++, Visual Basic, Adobe Photoshop, Adobe Illustrator.
+\SmallSep
+
+% Academic Project
+\CVSection{Academic Project}
+\CVItem{Detection and Classification of cancer cells in MRI Images [August 2018 - Present]}\\
+Detection, Classification \& Segmentation of Cancer Cells in MRI Images using Artificial Intelligence and Deep Learning.
+\SmallSep
+
+\clearpage
+\framebreak
+\framebreak
+
+\CVSection{Projects}
+
+\CVItem{www.allondoor.com [July 2018]}\\
+A website designed for the company AllOnDoor to market their services. 
+\SmallSep
+
+\CVItem{Yantraksh'18 Website [March 2018] }\\
+ A website designed for Annual Techno-Cultu Festival of Assam University. 
+\SmallSep
+
+\CVItem{ NewsExtractor [June-July 2017]}\\
+NewsExtractor  is a tool built on Python 3.6 using OpenCV 3.2 to extract news content as text from newspaper’s photo and perform news context extraction. It extracts news articles from newspaper and give the context about the news
+\SmallSep
+
+
+\CVItem{Reverse Engineering on CURA [June 2017]}\\
+ Cura is an open source software for printing 3D models. I worked on the GUI design of this software.This software uses python for design purpose. So, I worked with Python to remodel the software for customizing the software for company's requirements. 
+\SmallSep
+
+\CVItem{DIY Toolkits [May 2016]}\\
+  Arduino Based DIY projects on Weather and GPS Boxes, LED Mod Lights etc.
+\SmallSep
+
+\CVItem{Hire a Cab [May-July 2015]}\\
+ The system will enable hiring of the cab through an on-line system. Travelers would be able to search for the availability of the cab, book it, and pay for it on-line. The administrator would be able to look at requests, the date and time, check the availability of the drivers at the time, and allocate them to the car. The driver and the traveler will be notified about the allocation of cab through email.
+\SmallSep
+
+
+\CVItem{Universal Calculator  [March 2013]}\\
+ Developed using C++,can handle all types of Algebraic,Trigonometric and date and time calculations.
+\SmallSep
+
+%Achievements
+\CVSection{Position of Responsibilities}
+\CVItem{Student T\&P Co-ordinator,TSSOT, Assam University Silchar [July 2018 - Present]}
+\SmallSep \\
+\CVItem{Google DSC Student Lead, Assam University Silchar [August 2018 - Present]}
+\SmallSep\\
+\CVItem{Campus Ambassador at GeeksForGeeks[August 2017 - Present]}
+\SmallSep \\
+\CVItem{Branch Chair at IEEE AUS Student Branch [June 2018 - Present]}
+\SmallSep \\
+\CVItem{Head - CSI Club, Assam University [January 2018 - Present]}
+\SmallSep \\
+\CVItem{Head Organizer at TechFest(Yantraksh'18) [March 2018]}
+\SmallSep \\
+
+
+% Skills
+\CVSection{Skills}
+\CVItem{Programming Languages \& DBMS}
+\begin{multicols}{3}
+\begin{compactitem}[\color{RoyalBlue}$\circ$]
+	\item Python
+	\item C++
+	\item C
+	\item Java
+	\item Oracle Express Edition
+	\item IBM-DB2
+\end{compactitem}
+\end{multicols}
+\SmallSep
+
+\CVItem{Web Development, Design \&  Frameworks}
+\begin{multicols}{3}
+\begin{compactitem}[\color{RoyalBlue}$\circ$]
+	\item HTML
+	\item JSP
+	\item PHP 
+	\item AngularJS
+	\item NodeJS
+	\item Keras
+	\item CSS
+	\item Tensorflow
+	\item Qt (C++ and Python)
+	\item OpenCV
+	\item Adobe Photoshop
+	\item Adobe Illustrator
+	
+\end{compactitem}
+\end{multicols}
+\Sep 
+% References
+\CVSection{References}
+\CVItem{Dr. Sudipto Roy}\\
+Professor and Dean (TSSOT, Assam University)\\
+Email: sudipta.it@gmail.com\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% End document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
